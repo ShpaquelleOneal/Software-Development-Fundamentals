@@ -1,8 +1,7 @@
 # depslib dependency file v1.0
-1676996231 source:c:\users\trej2\documents\university of latvia\software-development-fundamentals\task_f18\main.cpp
+1677096443 source:c:\users\trej2\documents\university of latvia\software-development-fundamentals\task_f18\main.cpp
 	<iostream>
 	<fstream>
 	<string>
-	<vector>
 	<map>
 
