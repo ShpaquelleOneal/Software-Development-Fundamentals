@@ -1,0 +1,9 @@
+Number of letters in a word / Number of such words
+1 letter word / appears 2 times
+2 letter word / appears 4 times
+3 letter word / appears 3 times
+4 letter word / appears 2 times
+5 letter word / appears 1 times
+6 letter word / appears 2 times
+8 letter word / appears 3 times
+9 letter word / appears 1 times
