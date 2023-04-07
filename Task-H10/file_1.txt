@@ -1,0 +1,3 @@
+42      app   le     
+15 orange
+8 banana

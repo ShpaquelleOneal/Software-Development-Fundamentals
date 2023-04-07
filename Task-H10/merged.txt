@@ -1,0 +1,5 @@
+42 app   le
+29 grape
+15 orange
+8 banana banana
+6 lemon
