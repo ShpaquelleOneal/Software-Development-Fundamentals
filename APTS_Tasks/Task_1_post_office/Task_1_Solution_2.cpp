@@ -1,14 +1,73 @@
 #include <iostream>
 #include <fstream>
+
 using namespace std;
 
 const int MAX_WORD_LENGTH = 256;
 const int MAX_LETTERS = 26;
 
+struct node {
+    char * data;
+    node *next;
+
+public:
+    node(char * text) : data(text), next(NULL) {} // constructor
+    ~node() { // destructor
+        if(next != NULL) {
+            delete next;
+        }
+    }
+
+    void print(ofstream& fon) {
+        fon << data << ' ';
+        if(next != NULL) next -> print(fon);
+    }
+
+    void push_back(node *& first, char *text) {
+        node * x = new node(text);
+        while (first -> next != NULL) {
+            first = first -> next;
+        }
+        first -> next = x;
+    }
+};
+
+
 int main() {
     // open text files
-    ifstream fin("post.in");
-    ofstream fon("post.out");
+    ifstream fin("post.in.txt");
+    ofstream fon("post.out.txt");
+
+    // Check if input file is open
+    if (!fin.is_open()) {
+        fon << "Error opening input file..." << endl;
+        return 0;
+    }
+
+    char destinations[MAX_WORD_LENGTH]; // length of word (1 to 255 + null = 256)
+
+
+
+    for (int i=0; i<26; i++) { // repeat loop for each letter
+        node* p = new node(' ');
+        while(fin >> destinations) {
+            if (destinations[0] == 'a' + i || destinations[0] == 'A' + i) {
+                p -> push_back(p, destinations);
+            }
+        }
+        p->print(fon);
+    }
+
+    fin.close();
+    fon.close();
+    return 0;
+}
+
+/*
+int main() {
+    // open text files
+    ifstream fin("post.in.txt");
+    ofstream fon("post.out.txt");
 
     // Check if input file is open
     if (!fin.is_open()) {
@@ -74,3 +133,4 @@ int main() {
     fon.close();
     return 0;
 }
+*/
