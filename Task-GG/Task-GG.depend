@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1684262278 source:c:\users\trej2\documents\university of latvia\software-development-fundamentals\task-gg\main.cpp
+	<iostream>
+	"linked_list.h"
+
+1684248267 c:\users\trej2\documents\university of latvia\software-development-fundamentals\task-gg\linked_list.h
+	<iostream>
+
+1684262347 source:c:\users\trej2\documents\university of latvia\software-development-fundamentals\task-gg\linked_list.cpp
+	"linked_list.h"
+
+1684260390 source:c:\users\trej2\documents\university of latvia\software-development-fundamentals\task-gg\gg_unit-testing\unit_testing_1.cpp
+	<iostream>
+	<vector>
+	"../linked_list.h"
+
