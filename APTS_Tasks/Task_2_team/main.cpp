@@ -44,6 +44,13 @@ void displayTree(Node* root) {
     displayTree(root->right);
 }*/
 
+void countLevels (Node* root, int & times) {
+    if (root == nullptr) return;
+    if (root->data != 0) times++;
+    countLevels (root -> left, times);
+    countLevels (root -> right, times);
+}
+
 void displayTree(Node* root, int level) {
     if (root == nullptr) return;
     displayTree(root->right, level + 1);
@@ -69,6 +76,7 @@ int main() {
     int p, w, m;
     bool first_d = true;
     Node * first;
+    int levels = 0;
 
     while(fin >> p >> w >> m) {// while there is data, read it
 
@@ -99,19 +107,13 @@ int main() {
             first_d = false;
         }
     }
+    countLevels(first, levels);
     cout << "Stored tree:" << endl;
+    cout << "There are " << levels << " levels..." << endl;
     displayTree(first, 0);
     fin.close();
     fon.close();
     delete first;
-
-
-
-
-
-
-
-
 
 
     return 0;
